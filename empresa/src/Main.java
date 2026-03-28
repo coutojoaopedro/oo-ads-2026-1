@@ -1,61 +1,37 @@
-
 public class Main {
-   public static void main(String[] args) {
 
+    public static void main(String[] args) {
+        // teste01();
+        // teste02();
+        teste03();
+    }
 
-       // Criação do primeiro objeto de pessoa
-       Pessoa pessoa1 = new Pessoa();
+    public static void teste03() {
+        ContaEspecial conta1 = new ContaEspecial("Alice Almeida", Double.valueOf(1000.0), Double.valueOf(500.0));
+        ContaEspecial conta2 = new ContaEspecial("Bruno Borges", Double.valueOf(2500.0), Double.valueOf(1000.0));
+        ContaEspecial conta3 = new ContaEspecial("Carla Cardoso", Double.valueOf(300.0), Double.valueOf(200.0));
 
+        conta1.depositar(Double.valueOf(400.0));
+        conta1.sacar(Double.valueOf(150.0));
 
-       // Atribuindo valores aos atributos
-       pessoa1.nome = "Gervásio Gomes Garcia";
-       pessoa1.idade = 54;
-       pessoa1.cpf = "123.456.789-01";
-       pessoa1.email = "gervasio.garcia@empresa.com.br";
-       pessoa1.telefone = "(16) 98765-4321";
+        conta2.sacar(Double.valueOf(800.0));
+        conta2.depositar(Double.valueOf(200.0));
 
+        conta3.depositar(Double.valueOf(100.0));
+        conta3.sacar(Double.valueOf(50.0));
 
-       // Chamando o método para exibir os dados da pessoa 1
-       System.out.println(pessoa1.exibirDados());
+        System.out.println("=".repeat(40));
+        conta1.exibirSaldo();
+        conta1.exibirSaldoReal();
 
+        System.out.println("=".repeat(40));
+        conta2.exibirSaldo();
+        conta2.exibirSaldoReal();
 
-       System.out.println("-".repeat(80));  // Traço separador
+        System.out.println("=".repeat(40));
+        conta3.exibirSaldo();
+        conta3.exibirSaldoReal();
 
-
-       pessoa1.fazerAniversario();
-
-
-       // Chamando a apresentação da pessoa, que reflete a nova idade
-       pessoa1.apresentar();
-
-
-       System.out.println("-".repeat(80));  // Traço separador
-
-
-       // Atualizando o e-mail
-       pessoa1.atualizarEmail("ggarcia@outlook.com");
-
-
-       System.out.println("-".repeat(80));  // Traço separador
-
-
-       // Exibindo novamente os dados para conferir as alterações feitas
-       System.out.println(pessoa1.exibirDados());
-
-
-       // Alterando novamente o e-mail por meio de manipulação direta
-       // do valor do atributo
-       pessoa1.email = "garcia.gervasio@bol.com.br";
-
-
-       System.out.println("-".repeat(80));  // Traço separador
-
-
-       // Exibindo novamente os dados para conferir as alterações feitas
-       System.out.println(pessoa1.exibirDados());
-
-
-   }
+        System.out.println("=".repeat(40));
+    }
 }
-
-
